@@ -22,7 +22,7 @@ class Product
         $this->make = $make;
     }
 }
-$personalComputer = new Product;
+$personalComputer = new Product('Vivo Mini PC', 'Computer per uso personale', 499.99, 'Asus');
 var_dump($personalComputer);
 
 # iProduct extends Product
