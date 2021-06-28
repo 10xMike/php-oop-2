@@ -33,8 +33,16 @@ class iProduct extends Product
     protected $size;
     protected $resolution;
     protected $features;
+
+    function __construct(string $technology, string $type, float $size, string $resolution, string $features){
+        $this->technology = $technology;
+        $this->type = $type;
+        $this->size = $size;
+        $this->resolution = $resolution;
+        $this->features = $features;
+    }
 }
-$iMac = new iProduct;
+$iMac = new iProduct('Core i5', ' 2.3 (Mid-2017)', 21.5, '1920x1080', 'LED-backlit 16:9 widescreen');
 var_dump($iMac);
 
 # User
@@ -55,8 +63,8 @@ class User
         $this->password = $password;
     }
 }
-$cliente = new User;
-var_dump($cliente);
+/* $cliente = new User;
+var_dump($cliente); */
 
 # CreditCard extends User
 class CreditCard extends User
@@ -74,7 +82,7 @@ class CreditCard extends User
         $this->company = $company;
     }
 }
-$clientePremium = new CreditCard;
-var_dump($clientePremium);
+/* $clientePremium = new CreditCard;
+var_dump($clientePremium); */
 
 ?>
