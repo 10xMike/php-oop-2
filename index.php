@@ -6,6 +6,7 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
 Provate a far interagire tra di loro gli oggetti: ad esempio, l'utente dello shop inserisce una carta di credito...
 */
 
+# Product
 class Product {
     protected $name;
     protected $desc;
@@ -20,9 +21,16 @@ class Product {
         $this->make = $make;
     }
 }
+# iProduct
+class iProduct extends Product{
+    protected $technology;
+    protected $type;
+    protected $size;
+    protected $resolution;
+    protected $features;
+}
 
-$c = new CreditCard(); 
-$user->insertCreditCard($c);
+
 
 class User {
     protected $name;
