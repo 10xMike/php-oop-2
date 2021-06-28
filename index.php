@@ -4,10 +4,11 @@
 Oggi pomeriggio provate ad immaginare quali sono le classi necessarie per creare uno shop online; ad esempio, ci saranno sicuramente dei prodotti da acquistare e degli utenti che fanno shopping.
 Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci potrebbero essere degli utenti premium che hanno diritto a degli sconti esclusivi, oppure diverse tipologie di prodotti.
 Provate a far interagire tra di loro gli oggetti: ad esempio, l'utente dello shop inserisce una carta di credito...
-*/
+ */
 
 # Product
-class Product {
+class Product
+{
     protected $name;
     protected $desc;
     protected $price;
@@ -21,25 +22,32 @@ class Product {
         $this->make = $make;
     }
 }
-# iProduct
-class iProduct extends Product{
+$personalComputer = new Product;
+var_dump($personalComputer);
+
+# iProduct extends Product
+class iProduct extends Product
+{
     protected $technology;
     protected $type;
     protected $size;
     protected $resolution;
     protected $features;
 }
+$iMac = new iProduct;
+var_dump($iMac);
 
-
-
-class User {
+# User
+class User
+{
     protected $name;
     protected $lastname;
     protected $age;
     protected $mail;
     protected $password;
 
-    function __construct(string $name, string $lastname, string $age, string $mail, string $password){
+    public function __construct(string $name, string $lastname, string $age, string $mail, string $password)
+    {
         $this->name = $name;
         $this->lastname = $lastname;
         $this->age = $age;
@@ -47,5 +55,26 @@ class User {
         $this->password = $password;
     }
 }
+$cliente = new User;
+var_dump($cliente);
+
+# CreditCard extends User
+class CreditCard extends User
+{
+    protected $serialNumber;
+    protected $code;
+    protected $expiryDate;
+    protected $company;
+
+    public function __construct(string $serialNumber, int $code, string $expiryDate, string $company)
+    {
+        $this->serialNumber = $serialNumber;
+        $this->code = $code;
+        $this->expiryDate = $expiryDate;
+        $this->company = $company;
+    }
+}
+$clientePremium = new CreditCard;
+var_dump($clientePremium);
 
 ?>
