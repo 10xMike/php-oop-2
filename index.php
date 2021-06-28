@@ -21,4 +21,23 @@ class Product {
     }
 }
 
+$c = new CreditCard(); 
+$user->insertCreditCard($c);
+
+class User {
+    protected $name;
+    protected $lastname;
+    protected $age;
+    protected $mail;
+    protected $password;
+
+    function __construct(string $name, string $lastname, string $age, string $mail, string $password){
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->age = $age;
+        $this->mail = $mail;
+        $this->password = $password;
+    }
+}
+
 ?>
